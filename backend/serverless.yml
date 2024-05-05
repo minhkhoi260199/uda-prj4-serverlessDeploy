@@ -32,12 +32,12 @@ provider:
     lambda: true
     apiGateway: true
   environment:
+    PROJECT_NAME: "todo-app"
     TODOS_TABLE: todo-app-${self:provider.stage}
     TODOS_CREATED_AT_INDEX: CreatedAtIndex
-    ATTACHMENT_S3_BUCKET: todo-app-khoinm-${self:provider.stage}
-    SIGNED_URL_EXPIRATION: 300
-    PROJECT_NAME: "todo-app"
     INDEX_NAME: ${self:provider.environment.TODOS_CREATED_AT_INDEX}
+    SIGNED_URL_EXPIRATION: 300
+    ATTACHMENT_S3_BUCKET: todo-app-khoinm-${self:provider.stage}
 
   logs:
     restApi: true
